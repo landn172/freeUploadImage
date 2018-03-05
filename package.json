@@ -4,6 +4,16 @@
   "main": "index.js",
   "author": "蒋瑶 <landn172@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/landn172/freeUploadImage.git"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "engines": {
+    "node": ">=8"
+  },
   "dependencies": {
     "form-data": "^2.3.2",
     "request": "^2.83.0"
