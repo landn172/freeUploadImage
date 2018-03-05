@@ -6,10 +6,10 @@ const configFigurebed = {
   smms: SMMSUploadImage
 }
 
-module.exports = function uploadImage({
+module.exports = function uploadImage(
   filePath,
   figurebed = 'smms',
-}) {
+) {
   const upload = configFigurebed[figurebed]
   if (typeof upload !== 'function') return Promise.reject('图床配置[figurebed]不在列表中')
   return upload(filePath)
@@ -37,11 +37,10 @@ function SMMSUploadImage(filePath) {
         const result = JSON.parse(body)
         if (!result || result.code !== 'success') {
           reject();
-          reurn console.log(result)
+          return console.log(result)
         }
         const {
-          url,
-          delete
+          url
         } = result.data
         resolve(url)
       })
